@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: ibm-bios;
+    src: url('/ModernDOS8x16.ttf') format('truetype');
+}
+
+html, body {
+  color: #ffffff;
+  background-color: #0000aa;
+
+
+  font-family: 'ibm-bios', monospace;
+}

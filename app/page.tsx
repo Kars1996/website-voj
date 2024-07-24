@@ -174,7 +174,7 @@ export default function Home() {
   return (
     <main className="fixed flex w-full h-full flex-col items-center justify-center select-none cursor-none">
       <div className='max-w-[800px] w-[75%] flex flex-col justify-center items-center'>
-        <div className='sm:text-[20px] text-[15px]  text-center'>Voj's Portfolio
+        <div className='sm:text-[20px] text-[15px]  text-center'>Voj&apos;s Portfolio
           Utility - Copyright (C) 1984-1999 
           Award Software
         </div>

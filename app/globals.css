@@ -14,3 +14,7 @@ html, body {
 
   font-family: 'ibm-bios', monospace;
 }
+
+.clip-path-triangle {
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}

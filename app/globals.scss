@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$background: #0C0C14;
+$defulatText: #FFFFFF;
+
+body {
+  background-color: $background;
+  color: $defulatText;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

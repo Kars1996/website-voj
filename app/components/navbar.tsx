@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='w-full py-[3.8vh] px-[1.8vh]  sm:py-[3.78vh] sm:px-[7.77vh] flex items-center p-'>
+    <div className='w-full fixed top-0 py-[3.8vh] px-[1.8vh]  sm:py-[3.78vh] sm:px-[7.77vh] flex items-center bor'>
         <div className='text-[2vh] sm:text-[2.4vh]'>vojtikczhraje</div>
 
         <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? '' : ''} flex flex-col gap-[1vh] ml-auto cursor-pointer transition-all duration-300 ease-in-out`}>

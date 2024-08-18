@@ -12,11 +12,14 @@ const Navbar = () => {
 
     const NavbarItems = ['HOME', 'ABOUT', 'PROJECTS'];
 
-    const navbarItemsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-    // const navbarItem1 = useRef(null);
-    // const navbarItem2 = useRef(null);
-    // const navbarItem3 = useRef(null);
+    const navbarItem1 = useRef(null);
+    const navbarItem2 = useRef(null);
+    const navbarItem3 = useRef(null);
+    const navbarLink1 = useRef(null);
+    const navbarLink2 = useRef(null);
+    const navbarLink3 = useRef(null);
+    const lom1 = useRef(null);
+    const lom2 = useRef(null);
 
     
 
@@ -29,49 +32,50 @@ const Navbar = () => {
     }, [isOpen]);
 
     useLayoutEffect(() => {
-      let ctx = gsap.context(() => {
-          const tl = gsap.timeline();
-          const elements = navbarItemsRef.current.filter(el => el !== null);
-  
-          if (isOpen) {
-              tl.fromTo(
-                  elements,
-                  { opacity: 0, y: 100 },
-                  { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', delay: 0.3 }
-              );
-          } else {
-              tl.to(
-                  elements,
-                  { opacity: 0, y: 100, duration: 0.5, stagger: 0.1, ease: 'power2.in' }
-              );
-          }
-      }, comp);
-  
-      return () => ctx.revert();
-  }, [isOpen]);
+        let ctx = gsap.context(() => {
+            const tl = gsap.timeline();
+
+            if (isOpen) {
+                // Fade-in and slide-up effect when opening
+                tl.fromTo(
+                    [navbarItem1.current, navbarItem2.current, navbarItem3.current, navbarLink1.current, lom1.current, navbarLink2.current, lom2.current, navbarLink3.current],
+                    { opacity: 0, y: 100 },
+                    { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', delay: 0.3 }, 
+                );
+
+                
+            } else {
+                // Fade-out and slide-down effect when closing
+                tl.to(
+                    [navbarItem1.current, navbarItem2.current, navbarItem3.current, navbarLink1.current, lom1.current, navbarLink2.current, lom2.current, navbarLink3.current],
+                    { opacity: 0, y: 100, duration: 0.5, stagger: 0.1, ease: 'power2.in' }
+                );
+            }
+
+            
+
+
+        }, comp);
+
+        return () => ctx.revert();
+    }, [isOpen]);
 
     return (
         <div ref={comp} className='w-full fixed top-0 py-[3.8vh] px-[1.8vh] sm:py-[3.78vh] sm:px-[7.77vh] flex items-center bor z-[100]'>
             <div className={`${isOpen ? 'translate-x-0' : 'translate-x-[100%]'} duration-1000 transition-all ease-in-out fixed h-full w-full xl:w-1/2 bg-black top-0 right-0`}>
                 <div className='flex flex-col text-[8vh] sm:text-[12.6vh] h-full justify-center gap-10'>
-                <div className='flex flex-col h-[70%] justify-center border-b-[1px]'>
-                    {NavbarItems.map((item, index) => (
-                        <div 
-                            key={item}
-                            ref={el => navbarItemsRef.current[index] = el}
-                            className='my-[-10px] sm:my-[-30px] mx-5 sm:mx-20 cursor-pointer w-fit hover:text-[#818494] transition-colors duration-1000 ease-in-out'
-                        >
-                            {item}
-                        </div>
-                    ))}
-                </div>
+                    <div className='flex flex-col h-[70%] justify-center border-b-[1px]'>
+                        <div ref={navbarItem1} id='navbar-item1' className='my-[-10px] sm:my-[-30px] mx-5 sm:mx-20 cursor-pointer w-fit hover:text-[#818494] transition-colors duratino-1000 ease-in-out'>HOME</div>
+                        <div ref={navbarItem2} id='navbar-item2' className='my-[-10px] sm:my-[-30px] mx-5 sm:mx-20 cursor-pointer w-fit hover:text-[#444c64] transition-colors duratino-1000 ease-in-out'>ABOUT</div>
+                        <div ref={navbarItem3} id='navbar-item3' className='my-[-10px] sm:my-[-30px] mx-5 sm:mx-20 cursor-pointer w-fit hover:text-[#3c3c54] transition-colors duratino-1000 ease-in-out'>PROJECTS</div>
+                    </div>
 
                     <div className='flex justify-center gap-[3vh] sm:gap-[3.8vh] text-[2.2vh] text-white px-[1vh]'>
-                        <Link className='text-white' href='https://github.com/vojtikczhraje'>github</Link>
-                        <div>/</div>
-                        <Link className='text-white' href='https://github.com/vojtikczhraje'>discord</Link>
-                        <div>/</div>
-                        <Link  className='text-white' href='https://github.com/vojtikczhraje'>mail</Link>
+                        <Link ref={navbarLink1} className='text-white' href='https://github.com/vojtikczhraje'>github</Link>
+                        <div ref={lom1}>/</div>
+                        <Link ref={navbarLink2}  className='text-white' href='https://github.com/vojtikczhraje'>discord</Link>
+                        <div ref={lom2}>/</div>
+                        <Link ref={navbarLink3}  className='text-white' href='https://github.com/vojtikczhraje'>mail</Link>
                     </div>
                 </div>
             </div>

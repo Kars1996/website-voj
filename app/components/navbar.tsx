@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const NavbarItems = ['HOME', 'ABOUT', 'PROJECTS'];
 
-    const navbarItemsRef = useRef([]);
+    const navbarItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     // const navbarItem1 = useRef(null);
     // const navbarItem2 = useRef(null);
@@ -31,18 +31,17 @@ const Navbar = () => {
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
           const tl = gsap.timeline();
+          const elements = navbarItemsRef.current.filter(el => el !== null);
   
           if (isOpen) {
-              // Fade-in and slide-up effect when opening
               tl.fromTo(
-                  navbarItemsRef.current,
+                  elements,
                   { opacity: 0, y: 100 },
                   { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', delay: 0.3 }
               );
           } else {
-              // Fade-out and slide-down effect when closing
               tl.to(
-                  navbarItemsRef.current,
+                  elements,
                   { opacity: 0, y: 100, duration: 0.5, stagger: 0.1, ease: 'power2.in' }
               );
           }
@@ -59,7 +58,7 @@ const Navbar = () => {
                     {NavbarItems.map((item, index) => (
                         <div 
                             key={item}
-                            ref={el => navbarItemsRef.current[index] = el as HTMLDivElement}
+                            ref={el => navbarItemsRef.current[index] = el}
                             className='my-[-10px] sm:my-[-30px] mx-5 sm:mx-20 cursor-pointer w-fit hover:text-[#818494] transition-colors duration-1000 ease-in-out'
                         >
                             {item}

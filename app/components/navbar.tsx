@@ -47,9 +47,14 @@ const Navbar = () => {
             } else {
                 // Fade-out and slide-down effect when closing
                 tl.to(
-                    [navbarItem1.current, navbarItem2.current, navbarItem3.current, navbarLink1.current, lom1.current, navbarLink2.current, lom2.current, navbarLink3.current],
+                    [navbarItem1.current, navbarItem2.current, navbarItem3.current],
                     { opacity: 0, y: 100, duration: 0.5, stagger: 0.1, ease: 'power2.in' }
                 );
+
+                tl.to(
+                  [navbarLink1.current, lom1.current, navbarLink2.current, lom2.current, navbarLink3.current],
+                  { opacity: 0, y: 20, duration: 0.3, stagger: 0.1, ease: 'power2.in' }
+              );
             }
 
             

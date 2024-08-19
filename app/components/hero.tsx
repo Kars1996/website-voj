@@ -35,7 +35,7 @@ const Hero = () => {
     }, []);
 
   return (
-    <div className='flex flex-col lg:flex-row justify-center items-center w-full p-4 mt-[20vh] sm:mt-[24.8vh] gap-[4vh] lg:gap-[3vh]'>
+    <div className='flex flex-col lg:flex-row justify-center items-center w-full p-4 my-[20vh] sm:my-[24.8vh] gap-[4vh] lg:gap-[3vh]'>
         <img className='absolute -z-[40]' src="lines_background_hero.svg" alt="cary" />
 
         <div className='flex hidden lg:block items-center h-[38.5vh] w-[47vh] select-none'>

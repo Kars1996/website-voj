@@ -127,22 +127,22 @@ useLayoutEffect(() => {
         <div className='flex justify-center h-full w-full absolute flex-wrap gap-y-[30vh] md:gap-y-[10vh] xl:gap-x-[5vh] 2xl:flex-nowrap'>
             <div  className='flex justify-center items-center mx-[10vh] -z-10 xl:-z-0 w-full sm:w-[calc(50%-20vh)] xl:w-1/4 translate-x-[10vh] sm:translate-x-[0vh]'>
                 <img className='absolute' src="line.svg" />
-                <div ref={div1} className='absolute flex justify-center items-center w-[24vh] h-[31vh] md:w-[29vh] md:h-[37vh] lg:w-[32vh] lg:h-[40vh] xl:w-[35vh] xl:h-[45vh] translate-y-[10vh] sm:translate-y-[0vh]'>
-                    <img className='absolute' src="placeholder.png" />
+                <div ref={div1} className='absolute flex justify-center items-center w-[24vh] h-[31vh] md:w-[29vh] md:h-[37vh] lg:w-[32vh] lg:h-[40vh] xl:w-[35vh] xl:h-[45vh] translate-y-[10vh] sm:translate-y-[0vh] '>
+                    <img className='absolute rounded-[2vh]' src="placeholder.png" />
                     <div className='relative text-center sm:text-[2vh] xl:text-[2.4vh] tracking-wide mx-3'>1 year experience</div>
                 </div>
             </div>
             <div  className='flex justify-center items-center mx-[10vh] -z-10 w-full sm:w-[calc(50%-20vh)] xl:w-1/4 translate-x-[-8vh] sm:translate-x-[0vh]'>
                 <img className='absolute' src="line.svg" />
                 <div ref={div2} className='absolute flex justify-center items-center w-[24vh] h-[31vh] md:w-[29vh] md:h-[37vh] lg:w-[32vh] lg:h-[40vh] xl:w-[35vh] xl:h-[45vh]'>
-                    <img className='absolute' src="placeholder2.png" />
+                    <img className='absolute rounded-[2vh]' src="placeholder2.png" />
                     <div className='relative text-center sm:text-[2vh] xl:text-[2.4vh] tracking-wide mx-3'>Creative problem solver</div>
                 </div>
             </div>
             <div  className='flex justify-center items-center mx-[10vh] -z-10 xl:-z-0 w-full sm:w-[calc(50%-20vh)] xl:w-1/4 translate-x-[8vh] ] sm:translate-x-[0vh]'>
                 <img className='hidden sm:flex absolute' src="line.svg" />
                 <div ref={div3} className='absolute flex justify-center items-center w-[24vh] h-[31vh] md:w-[29vh] md:h-[37vh] lg:w-[32vh] lg:h-[40vh] xl:w-[35vh] xl:h-[45vh] translate-y-[5vh] sm:translate-y-[0vh]'>
-                    <img className='absolute' src="placeholder3.png" />
+                    <img className='absolute rounded-[2vh]' src="placeholder3.png" />
                     <div className='relative text-center sm:text-[2vh] xl:text-[2.4vh] tracking-wide mx-3'>Continuous Learner</div>
                 </div>
             </div>
@@ -150,7 +150,7 @@ useLayoutEffect(() => {
                 <img className='hidden sm:flex absolute' src="line.svg" />
                 <div ref={div4} className='absolute flex justify-center items-center w-[24vh] h-[31vh] md:w-[29vh] md:h-[37vh] lg:w-[32vh] lg:h-[40vh] xl:w-[35vh] xl:h-[45vh] translate-y-[-5vh] sm:translate-y-[0vh]'>
 
-                    <img className='absolute' src="placeholder4.png" />
+                    <img className='absolute rounded-[2vh]' src="placeholder4.png" />
                     <div className='relative text-center sm:text-[2vh] xl:text-[2.4vh] tracking-wide mx-3 '>Adaptable and Resilient</div>
                 </div>
             </div>

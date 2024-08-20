@@ -111,8 +111,8 @@ const Navbar = () => {
                 >
                     <div>
                         <div onClick={() => setIsOpen(!isOpen)} className={`flex flex-col gap-[1vh] ml-auto cursor-pointer transition-all duration-300 ease-in-out z-[50]`}>
-                            <div className={`${isOpen ? 'rotate-[45deg] translate-y-[4px]' : ''} w-[6vh] sm:w-[9vh] h-[0.2vh] bg-white transition-all duration-300 ease-in-out`}></div>
-                            <div className={`${isOpen ? 'rotate-[-45deg] translate-y-[-8px]' : ''} w-[6vh] sm:w-[9vh] h-[0.2vh] bg-white transition-all duration-300 ease-in-out`}></div>
+                            <div className={`${isOpen ? 'rotate-[45deg] translate-y-[4px]' : ''} w-[6vh] sm:w-[9vh] h-[0.2vh] bg-white transition-all duration-300 ease-in-out rounded-[0.2vh]`}></div>
+                            <div className={`${isOpen ? 'rotate-[-45deg] translate-y-[-8px]' : ''} w-[6vh] sm:w-[9vh] h-[0.2vh] bg-white transition-all duration-300 ease-in-out rounded-[0.2vh]`}></div>
                         </div>
                     </div>
                 </CircularProgressbarWithChildren>

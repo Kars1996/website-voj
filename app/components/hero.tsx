@@ -18,6 +18,9 @@ const Hero = () => {
     const Links = useRef(null);
     const Links2 = useRef(null);
     const Links3 = useRef(null);
+
+    const lomitko = useRef(null);
+    const lomitko2 = useRef(null);
   
     useEffect(() => {
       const handleMouseMove = (event: any) => {
@@ -49,9 +52,9 @@ const Hero = () => {
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             const tl = gsap.timeline();
-            tl.fromTo(HeroImage.current, 
+            tl.fromTo([HeroImage.current, HeroText.current, HeroText2.current, Links.current, lomitko.current, Links2.current, lomitko2.current, Links3.current],
               { opacity: 0, y: 100 }, 
-              { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+              { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 1 }
             )
             tl.fromTo(HeroImage2.current, 
                     { opacity: 0, y: 100 }, 
@@ -64,12 +67,6 @@ const Hero = () => {
                     "-=0.4" // This overlaps as well
             );
 
-            tl.fromTo(
-              [HeroText.current, HeroText2.current, Links.current, Links2.current, Links3.current],
-              { opacity: 0, y: 100 }, 
-              { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1, }, 
-              
-            );
           }, comp);
  
           return () => ctx.revert();
@@ -128,15 +125,18 @@ const Hero = () => {
             <img className='translate-y-[-5vh] select-none hidden absolute xl:block h-[60vh] -z-[20]' src="vojtikczhraje_arrow.svg" alt="bigassarrow"  />
 
             <div ref={HeroText} className='text-[2.6vh] px-[1vh] text-center lg:text-left'>bring your ideas to...</div>
-            <div ref={HeroText2} className=' h-[14.2vh] px-[2vh] text-[8.6vh] sm:text-[9.6vh] text-[#0C0C14] relative z-20 tracking-wider'>reality</div>
 
-            <div  className='absolute w-[42vh] sm:w-[48vh] h-[13.2vh]  bg-[#3C3C54] translate-y-[5.5vh] translate-x-[0.8vh] rounded-[0.8vh]'></div>
+            <div className='relative'>
+              <div ref={HeroText2} className=' h-[14.2vh] px-[2vh] text-[8.6vh] sm:text-[9.6vh] text-[#0C0C14] relative z-20 tracking-wider'>reality</div>
+
+              <div  className='absolute w-[42vh] sm:w-[48vh] h-[13.2vh]  bg-[#3C3C54] translate-y-[-13vh] translate-x-[0.8vh] rounded-[0.8vh]'></div>
+            </div>
 
             <div className='flex justify-center gap-[3vh] sm:gap-[3.8vh] text-[2.2vh] text-white px-[1vh]'>
             <Link ref={Links} className='text-white' href='https://github.com/vojtikczhraje'>github</Link>
-            <div ref={Links}>/</div>
+            <div ref={lomitko}>/</div>
             <Link ref={Links2} className='text-white' href='https://github.com/vojtikczhraje'>discord</Link>
-            <div >/</div>
+            <div ref={lomitko2}>/</div>
             <Link ref={Links3} className='text-white' href='https://github.com/vojtikczhraje'>mail</Link>
             </div>
 

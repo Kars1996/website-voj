@@ -54,17 +54,17 @@ const Hero = () => {
             const tl = gsap.timeline();
             tl.fromTo([HeroImage.current, HeroText.current, HeroText2.current, Links.current, lomitko.current, Links2.current, lomitko2.current, Links3.current],
               { opacity: 0, y: 100 }, 
-              { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 1 }
+              { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 1, stagger: 0.1 }
             )
             tl.fromTo(HeroImage2.current, 
                     { opacity: 0, y: 100 }, 
                     { opacity: 0.5, y: 0, duration: 0.5, ease: 'power2.out' }, 
-                    "-=0.4" // This overlaps the animations by starting slightly before the previous one finishes
+                    "-=1.1" // This overlaps the animations by starting slightly before the previous one finishes
             )
             tl.fromTo(HeroImage3.current, 
                     { opacity: 0, y: 100 }, 
                     { opacity: 0.25, y: 0, duration: 0.5, ease: 'power2.out' }, 
-                    "-=0.4" // This overlaps as well
+                    "-=1" // This overlaps as well
             );
 
           }, comp);
@@ -126,8 +126,8 @@ const Hero = () => {
 
             <div ref={HeroText} className='text-[2.6vh] px-[1vh] text-center lg:text-left'>bring your ideas to...</div>
 
-            <div className='relative'>
-              <div ref={HeroText2} className=' h-[14.2vh] px-[2vh] text-[8.6vh] sm:text-[9.6vh] text-[#0C0C14] relative z-20 tracking-wider'>reality</div>
+            <div ref={HeroText2} className='relative'>
+              <div className=' h-[14.2vh] px-[2vh] text-[8.6vh] sm:text-[9.6vh] text-[#0C0C14] relative z-20 tracking-wider'>reality</div>
 
               <div  className='absolute w-[42vh] sm:w-[48vh] h-[13.2vh]  bg-[#3C3C54] translate-y-[-13vh] translate-x-[0.8vh] rounded-[0.8vh]'></div>
             </div>

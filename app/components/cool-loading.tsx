@@ -55,7 +55,7 @@ const Loading = () => {
     }, []);
     
       return (
-        <div ref={comp} className='fixed top-0 w-full h-full flex flex-col gap-4 justify-center items-center z-[100] bg-[#0C0C14] text-[8vh] italic text-center '>
+        <div ref={comp} className='fixed top-0 w-full h-full flex flex-col gap-4 justify-center items-center z-[100] bg-[#0C0C14] text-[5vh] sm:text-[8vh] italic text-center '>
           <div className=''>{loadingTranslations[currentIndex]}</div>
 
           

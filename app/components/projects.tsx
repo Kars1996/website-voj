@@ -1,8 +1,10 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 
 const Projects = () => {
-  const [state, setState] = useState(1);
+  const [state, setState] = useState(0);
   const containerRef = useRef(null);
   const lastTriggerTime = useRef(0);
 
@@ -17,8 +19,8 @@ const Projects = () => {
         setTimeout(() => {
           setState((prevState) => {
             if (event.deltaY > 0) {
-              if (prevState === 4) {
-                return prevState; // Don't update the state if it's already 4
+              if (prevState === 3) {
+                return prevState; // Don't update the state if it's already 3
               } else {
                 return prevState + 1; // Scroll down
               }
@@ -39,12 +41,32 @@ const Projects = () => {
     return () => {
       container.removeEventListener('wheel', handleScroll);
     };
+
+  }, []);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(containerRef.current, {
+        y: '100vh', // Adjust this value based on how far you want the div to move
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+          markers: true
+        },
+      });
+    });
+  
+    return () => ctx.revert();
   }, []);
 
   console.log(state);
 
   return (
-    <div ref={containerRef} className="flex xl:flex-row flex-col w-full">
+    <div ref={containerRef} className="flex xl:flex-row flex-col w-full h-[200vh]">
       <div className="xl:w-[45%] xl:h-[100vh] px-[7.6vh]">
         <div className="relative text-[5vh] mt-[16.4vh] z-10">
             <div className='relative z-0 '>Project Name</div>
@@ -82,6 +104,7 @@ const Projects = () => {
         <div className="flex mt-[16vh] text-[2.5vh]">
           <div>date: </div>
           <div>dd/mm/yy</div>
+          <div>{state}</div>
         </div>
       </div>
       <div className="xl:w-[55%] xl:h-[100vh] ">

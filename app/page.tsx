@@ -3,6 +3,8 @@ import Image from "next/image";
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import About from "./components/about";
+import Projects from "./components/projects"
+
 import Loading from "./components/cool-loading"
 import { useEffect } from 'react';
 
@@ -19,6 +21,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Projects />
+      
       <Loading />
     </main>
   );

@@ -21,3 +21,12 @@ body {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, rgba(153, 153, 153, 0.20) 100%);
 }
 
+::moz-selection {
+  color: $defulatText;
+  background-color: $background;
+}
+
+::selection {
+  color: $defulatText;
+  background: $background; 
+}
